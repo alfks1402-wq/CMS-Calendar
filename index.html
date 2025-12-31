@@ -1081,6 +1081,7 @@
         function exportSettings() {
             const settings = {
                 deletedHolidays: DELETED_HOLIDAYS,
+                systemHolidayOverrides: SYSTEM_HOLIDAY_OVERRIDES,
                 exportDate: new Date().toISOString(),
                 version: '1.0'
             };
@@ -1118,6 +1119,13 @@
                         if (confirm(confirmMsg)) {
                             DELETED_HOLIDAYS = settings.deletedHolidays;
                             saveDeletedHolidaysToStorage();
+
+                            // 시스템 공휴일 이름 수정 정보도 가져오기 (있는 경우)
+                            if (settings.systemHolidayOverrides && typeof settings.systemHolidayOverrides === 'object') {
+                                SYSTEM_HOLIDAY_OVERRIDES = settings.systemHolidayOverrides;
+                                saveSystemHolidayOverridesToStorage(); // localStorage에도 저장
+                            }
+                    
                             renderCalendar();
                             renderHolidayList();
                             alert('설정이 성공적으로 가져와졌습니다.');
