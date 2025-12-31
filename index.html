@@ -982,7 +982,40 @@
         // localStorage 키
         const STORAGE_KEY_DELETED_HOLIDAYS = 'cms_calendar_deleted_holidays';
         const STORAGE_KEY_SYSTEM_HOLIDAY_OVERRIDES = 'cms_calendar_system_holiday_overrides';
-        
+
+        // loadRemoteSettings(): /holidays.json에서 중앙 설정을 읽어와 로컬에 값이 없을 때만 적용합니다.
+        async function loadRemoteSettings() {
+          const remoteUrl = '/holidays.json';
+          try {
+            const resp = await fetch(remoteUrl, { method: 'GET', cache: 'no-cache' });
+            if (!resp.ok) { console.log('remote settings: fetch failed', resp.status); return; }
+            const settings = await resp.json();
+
+            // deletedHolidays: 로컬에 키가 없을 때만 적용
+            if (Array.isArray(settings.deletedHolidays)) {
+              if (!localStorage.getItem(STORAGE_KEY_DELETED_HOLIDAYS)) {
+                DELETED_HOLIDAYS = settings.deletedHolidays.slice();
+                try { saveDeletedHolidaysToStorage(); } catch(e){ /* 함수가 정의되기 전일 경우 무시 */ }
+                console.log('Applied remote deletedHolidays');
+              } else {
+                console.log('Local deletedHolidays present — skip applying remote defaults');
+              }
+            }
+
+            // systemHolidayOverrides: 로컬에 키가 없을 때만 적용
+            if (settings.systemHolidayOverrides && typeof settings.systemHolidayOverrides === 'object') {
+             if (!localStorage.getItem(STORAGE_KEY_SYSTEM_HOLIDAY_OVERRIDES)) {
+               SYSTEM_HOLIDAY_OVERRIDES = Object.assign({}, settings.systemHolidayOverrides);
+               try { saveSystemHolidayOverridesToStorage(); } catch(e){ }
+               console.log('Applied remote systemHolidayOverrides');
+             } else {
+               console.log('Local systemHolidayOverrides present — skip applying remote defaults');
+             }
+           }
+         } catch (err) {
+           console.warn('Failed to load /holidays.json:', err);
+         }
+       }
         // UI Elements
         const calendarDaysEl = document.getElementById('calendarDays');
         const currentMonthYearEl = document.getElementById('currentMonthYear');
@@ -2420,7 +2453,8 @@
 
 
         // --- 초기 로드 및 이벤트 연결 ---
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadRemoteSettings();
             // localStorage에서 제외된 공휴일 목록 로드
             loadDeletedHolidaysFromStorage();
             loadSystemHolidayOverridesFromStorage();
@@ -2474,3 +2508,4 @@
     </script>
 
 </body></html>
+
