@@ -19,15 +19,15 @@
             #app > .mb-4, 
             #app > .tab-content > .flex.justify-between, 
             #app > .tab-content > .mt-12,
-            #printBtn,
+            #printBtn,11t;
             #monthYearSelectors {
                 display: none !important;
             }
-            /* 달력 전체 레이아웃 설정 */
+            /* 달력 전체 레이아웃 설정 */dpqk 
             .calendar-container, #calendarDays {
                 box-shadow: none !important;
                 border: 1px solid #ccc !important;
-            }
+            } 
             .day-cell {
                 min-height: 80px !important; /* 인쇄 시 높이 조정 */
                 border: 1px solid #e5e7eb !important;
@@ -221,8 +221,8 @@
                     <div class="day-cell">
                         <span class="day-number">1</span>
                         
-                            <div class="task-block color-group-send" title="EB13/E13(출금신청/동의): UBMS→금결원 오전 10시">
-                                <span class="task-code">EB13/E13(출금신청/동의)</span><br>
+                            <div class="task-block color-group-send" title="EB13/EI13(출금신청/동의): UBMS→금결원 오전 10시">
+                                <span class="task-code">EB13/EI13(출금신청/동의)</span><br>
                                 <span class="task-detail">UBMS→금결원 오전 10시</span>
                             </div>
                         
@@ -301,8 +301,8 @@
                     <div class="day-cell">
                         <span class="day-number">11</span>
                         
-                            <div class="task-block color-group-send" title="EB13/E13(출금신청/동의): UBMS→금결원 오전 10시">
-                                <span class="task-code">EB13/E13(출금신청/동의)</span><br>
+                            <div class="task-block color-group-send" title="EB13/EI13(출금신청/동의): UBMS→금결원 오전 10시">
+                                <span class="task-code">EB13/EI13(출금신청/동의)</span><br>
                                 <span class="task-detail">UBMS→금결원 오전 10시</span>
                             </div>
                         
@@ -341,8 +341,8 @@
                     <div class="day-cell">
                         <span class="day-number">16</span>
                         
-                            <div class="task-block color-group-send" title="EB13/E13(출금신청/동의): UBMS→금결원 오전 10시">
-                                <span class="task-code">EB13/E13(출금신청/동의)</span><br>
+                            <div class="task-block color-group-send" title="EB13/EI13(출금신청/동의): UBMS→금결원 오전 10시">
+                                <span class="task-code">EB13/EI13(출금신청/동의)</span><br>
                                 <span class="task-detail">UBMS→금결원 오전 10시</span>
                             </div>
                         
@@ -396,8 +396,8 @@
                     <div class="day-cell">
                         <span class="day-number">21</span>
                         
-                            <div class="task-block color-group-send" title="EB13/E13(출금신청/동의): UBMS→금결원 오전 10시">
-                                <span class="task-code">EB13/E13(출금신청/동의)</span><br>
+                            <div class="task-block color-group-send" title="EB13/EI13(출금신청/동의): UBMS→금결원 오전 10시">
+                                <span class="task-code">EB13/EI13(출금신청/동의)</span><br>
                                 <span class="task-detail">UBMS→금결원 오전 10시</span>
                             </div>
                         
@@ -589,7 +589,7 @@
                         <tbody id="cms-criteria-body" class="bg-white divide-y divide-gray-200 text-sm">
                 <tr class="hover:bg-gray-50 ">
                     <td class="px-3 py-2 whitespace-nowrap text-xs font-medium text-gray-800">출금신청/동의</td>
-                    <td class="px-3 py-2 whitespace-nowrap text-xs text-indigo-600 font-semibold">EB13/E13</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-xs text-indigo-600 font-semibold">EB13/EI13</td>
                     <td class="px-3 py-2 whitespace-nowrap text-xs text-gray-700">1,11,16,21일</td>
                     <td class="px-3 py-2 text-xs text-gray-700">UBMS→금결원 오전 10시</td>
                     <td class="px-3 py-2 text-xs text-gray-700">파일 수신 익 영업일 오후 12시</td>
@@ -608,7 +608,7 @@
                 <tr class="hover:bg-gray-50 ">
                     <td class="px-3 py-2 whitespace-nowrap text-xs font-medium text-gray-800">출금신청 결과</td>
                     <td class="px-3 py-2 whitespace-nowrap text-xs text-indigo-600 font-semibold">EB14</td>
-                    <td class="px-3 py-2 whitespace-nowrap text-xs text-gray-700">EB13/E13파일 송신 +2영업일</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-xs text-gray-700">EB13/EI13파일 송신 +2영업일</td>
                     <td class="px-3 py-2 text-xs text-gray-700">금결원→UBMS 오후 1시</td>
                     <td class="px-3 py-2 text-xs text-gray-700">파일 수신 당일 오후 5시</td>
                     <td class="px-3 py-2 whitespace-nowrap text-xs text-gray-700">-</td>
@@ -1559,10 +1559,10 @@
 
         // --- Mock Data and Constant Definition ---
         const CMS_CRITERIA_ALL = [
-            { stage: '출금신청/동의', code: 'EB13/E13', date: '1,11,16,21일', task: 'UBMS→금결원 오전 10시', deadline: '파일 수신 익 영업일 오후 12시', holiday: '다음 영업일', type: 'send', colorClass: 'color-group-send', baseCode: null, delayDays: 0 },
+            { stage: '출금신청/동의', code: 'EB13/EI13', date: '1,11,16,21일', task: 'UBMS→금결원 오전 10시', deadline: '파일 수신 익 영업일 오후 12시', holiday: '다음 영업일', type: 'send', colorClass: 'color-group-send', baseCode: null, delayDays: 0 },
             { stage: '출금의뢰', code: 'EB21', date: '4,14,19,24일', task: 'UBMS→금결원 오후 1시', deadline: '파일 수신 당일 오후 5시', holiday: '이전 영업일', type: 'send', colorClass: 'color-group-send', baseCode: null, delayDays: 0 },
             
-            { stage: '출금신청 결과', code: 'EB14', date: 'EB13/E13파일 송신 +2영업일', task: '금결원→UBMS 오후 1시', deadline: '파일 수신 당일 오후 5시', holiday: '-', type: 'receive', colorClass: 'color-group-receive', baseCode: 'EB13/E13', delayDays: 2 },
+            { stage: '출금신청 결과', code: 'EB14', date: 'EB13/EI13파일 송신 +2영업일', task: '금결원→UBMS 오후 1시', deadline: '파일 수신 당일 오후 5시', holiday: '-', type: 'receive', colorClass: 'color-group-receive', baseCode: 'EB13/EI13', delayDays: 2 },
             { stage: '출금의뢰 결과', code: 'EB22', date: 'EB21파일 송신 +2영업일', task: '금결원→UBMS 오전 9시', deadline: '파일 수신 당일 오후 12시', holiday: '-', type: 'receive', colorClass: 'color-group-receive', baseCode: 'EB21', delayDays: 2 },
             { stage: '입금의뢰', code: 'EB31', date: 'EB21파일 송신 +2영업일', task: 'UBMS→금결원 오후 12시', deadline: '파일 수신 익 영업일 오후 2시', holiday: '-', type: 'send', colorClass: 'color-group-send', baseCode: 'EB21', delayDays: 2 },
             { stage: '입금의뢰 결과', code: 'EB32', date: 'EB31파일 송신 +2영업일', task: '금결원→UBMS 오후 1시', deadline: '파일 수신 당일 오후 5시', holiday: '-', type: 'receive', colorClass: 'color-group-receive', baseCode: 'EB31', delayDays: 2 },
@@ -2065,7 +2065,7 @@
             // 이전 달의 base tasks도 계산 (현재 달에 영향을 미칠 수 있음)
             const prevMonthDaysInMonth = new Date(prevMonthYear, prevMonth + 1, 0).getDate();
             
-            // 1. Base Tasks (EB13/E13, EB21) 날짜 계산 및 적용 (휴일 처리 포함)
+            // 1. Base Tasks (EB13/EI13, EB21) 날짜 계산 및 적용 (휴일 처리 포함)
             const baseCriteria = CMS_CRITERIA_ALL.filter(c => c.type !== 'excluded' && c.baseCode === null);
             
             // 현재 달의 base tasks 계산
@@ -2149,7 +2149,7 @@
             const eb31Dates = [];
             const prevMonthEb31Dates = []; 
 
-            dependentCriteria.filter(c => ['EB13/E13', 'EB21'].includes(c.baseCode)).forEach(criteria => {
+            dependentCriteria.filter(c => ['EB13/EI13', 'EB21'].includes(c.baseCode)).forEach(criteria => {
                 const baseCode = criteria.baseCode;
                 const delayDays = criteria.delayDays;
 
@@ -2235,7 +2235,7 @@
             });
             
             // 이전 달의 base tasks로부터 파생되는 dependent tasks 계산 (현재 달에 영향을 미칠 수 있음)
-            dependentCriteria.filter(c => ['EB13/E13', 'EB21'].includes(c.baseCode)).forEach(criteria => {
+            dependentCriteria.filter(c => ['EB13/EI13', 'EB21'].includes(c.baseCode)).forEach(criteria => {
                 const baseCode = criteria.baseCode;
                 const delayDays = criteria.delayDays;
 
@@ -2508,4 +2508,3 @@
     </script>
 
 </body></html>
-
